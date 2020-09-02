@@ -1,15 +1,14 @@
 name: N1-OpenWrt-CI
 
 on:
+  push:
+    branches: 
+      - master
   schedule:
-    - cron: '0 22 * * *'
+    - cron: 0 20 * * *
   repository_dispatch:
     types: 'run'
-  push:
-    paths:
-      - '.github/workflows/build-CI.yml'
-      - '.github/config'    
-    types: 'run'
+
 env:
   TZ: 'Asia/Shanghai'
 
