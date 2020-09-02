@@ -5,7 +5,12 @@ on:
     - cron: '0 22 * * *'
   repository_dispatch:
     types: 'run'
-    
+  push:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/build-CI.yml'
+      - '.github/config'    
 env:
   TZ: 'Asia/Shanghai'
 
